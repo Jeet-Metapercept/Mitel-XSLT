@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is part of the DITA Open Toolkit project hosted on 
+     Sourceforge.net. See the accompanying license.txt file for 
+     applicable licenses.-->
+<!-- (c) Copyright IBM Corp. 2004, 2006 All Rights Reserved. -->
+<project name="Mojo_pdf" default="samples.pdf" basedir=".">
+	<property name="dita.dir" location="${basedir}/../.."/>
+	<property name="args.chapter.layout" value="BASIC"/>
+	<target name="samples.pdf" description="build the samples as PDF" depends="clean.samples.pdf">
+		<ant antfile="${dita.dir}/build.xml">
+			<property name="args.input" location="C:\Users\admin1\Desktop\Updated_MitelPOC-20170320T102809Z-001\MitelPOC\MainBookTitle.ditamap"/>
+			<property name="output.dir" location="C:\Metapercept\DITA-OT Publishing Tool\resources\output\pdf"/>
+			<property name="transtype" value="PDF"/>
+		</ant>
+	</target>
+	<target name="clean.samples.pdf" description="remove the sample PDF output">
+		<delete dir="${dita.dir}/out/samples/pdf"/>
+	</target>
+</project>
